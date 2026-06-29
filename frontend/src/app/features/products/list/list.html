@@ -1,0 +1,102 @@
+<div style="display:flex;justify-content:space-between;margin-bottom:20px;">
+
+    <h2>Products</h2>
+
+    <button (click)="logout()">
+        Logout
+    </button>
+
+</div>
+
+<a routerLink="/products/create">
+    ➕ Create Product
+</a>
+
+<a routerLink="/products/bulk">
+    Bulk Upload
+</a>
+
+<button (click)="downloadCsv()" [disabled]="exporting">
+
+    <span *ngIf="exporting" class="spinner"></span>
+
+    {{ exporting ? 'Exporting...' : 'Export CSV' }}
+
+</button>
+
+<br><br>
+
+<input type="text" [(ngModel)]="search" (input)="onSearch()" placeholder="Search by product/category">
+
+<button (click)="toggleSort()">
+    Sort Price: {{ sort }}
+</button>
+
+<br><br>
+
+<p>
+    Total Products:
+    <strong>{{ totalItems }}</strong>
+</p>
+
+<table border="1" width="100%" cellpadding="10">
+
+    <tr>
+
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Actions</th>
+
+    </tr>
+
+    <tr *ngFor="let p of products">
+
+        <td>
+
+            <img *ngIf="p.image" [src]="'http://localhost:3000' + p.image" width="70" height="70">
+            <!-- {{ p.image }} -->
+        </td>
+
+        <td>{{ p.name }}</td>
+
+        <td>{{ p.price }}</td>
+
+        <td>{{ p.category?.name }}</td>
+
+        <td>
+
+            <button [routerLink]="['/products/edit', p.id]">
+                Edit
+            </button>
+
+            <button (click)="delete(p.id)">
+                Delete
+            </button>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<button (click)="prev()" [disabled]="page === 1">
+
+    Previous
+
+</button>
+
+&nbsp;
+
+Page {{ page }} of {{ totalPages }}
+
+&nbsp;
+
+<button (click)="next()" [disabled]="page >= totalPages">
+
+    Next
+
+</button>

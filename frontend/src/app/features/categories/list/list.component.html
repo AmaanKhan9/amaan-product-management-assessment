@@ -1,0 +1,19 @@
+<h2>Categories</h2>
+
+<a routerLink="/categories/create">➕ Create Category</a>
+
+<table border="1" width="100%">
+    <tr>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+
+    <tr *ngFor="let c of categories">
+        <td>{{ c.name }}</td>
+
+        <td>
+            <a [routerLink]="['/categories/edit', c.id]">Edit</a>
+            <button (click)="delete(c.id)">Delete</button>
+        </td>
+    </tr>
+</table>

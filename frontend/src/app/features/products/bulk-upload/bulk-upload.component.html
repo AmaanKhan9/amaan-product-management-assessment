@@ -1,0 +1,23 @@
+<h2>Bulk Upload Products</h2>
+
+<br>
+
+<input type="file" accept=".csv" (change)="onFileChange($event)">
+
+<br><br>
+
+<button (click)="upload()" [disabled]="loading">
+
+    <span *ngIf="loading" class="spinner"></span>
+
+    {{ loading ? 'Uploading...' : 'Upload CSV' }}
+
+</button>
+
+&nbsp;
+
+<button routerLink="/products" [disabled]="loading">
+
+    Back
+
+</button>

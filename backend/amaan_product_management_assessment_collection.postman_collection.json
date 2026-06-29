@@ -1,0 +1,624 @@
+{
+  "info": {
+    "_postman_id": "de301052-76eb-41bf-8300-2f788ede6767",
+    "name": "amaan_product_management_assessment_collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29682120",
+    "_collection_link": "https://go.postman.co/collection/29682120-de301052-76eb-41bf-8300-2f788ede6767?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "register-user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"saad\",\r\n    \"email\": \"saad@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login-user",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"saad@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "me",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{bearer_token_0xpj}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/users/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "category-management",
+      "item": [
+        {
+          "name": "create-category",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{supabase_service_role_api_key_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Food\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-categories",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/categories",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-category-by-id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/categories/ffb45c5c-217c-4bb5-a4f5-37a2ecf36bce",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "categories",
+                "ffb45c5c-217c-4bb5-a4f5-37a2ecf36bce"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-category",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Electronics\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/categories/6920afa3-39db-4b47-b458-43270cb6b2f4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "categories",
+                "6920afa3-39db-4b47-b458-43270cb6b2f4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-category",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/categories/6920afa3-39db-4b47-b458-43270cb6b2f4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "categories",
+                "6920afa3-39db-4b47-b458-43270cb6b2f4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "product-management",
+      "item": [
+        {
+          "name": "create-product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Nissan Terrano",
+                  "type": "text",
+                  "uuid": "0e412e97-dda5-4629-9000-2c535ba77787"
+                },
+                {
+                  "key": "price",
+                  "value": "8888",
+                  "type": "text",
+                  "uuid": "6c1f9e68-f255-40ba-8fd6-c3ad57a9c8d3"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "6920afa3-39db-4b47-b458-43270cb6b2f4",
+                  "type": "text",
+                  "uuid": "9bb70563-babd-4a57-aa60-ba5c15e1b3ca"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "d53e6135-5e14-4605-a016-0b6d8012a3ea",
+                  "src": "/C:/Users/X/Pictures/ajajaj.PNG"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-products",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/products?page=1&limit=5&sort=desc&search=Fitness%20%26%20Lifestyle",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "desc"
+                },
+                {
+                  "key": "search",
+                  "value": "Fitness%20%26%20Lifestyle"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get-product-by-id",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/products/9fd65923-a3ca-45b0-a900-bc15ee6473d6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "9fd65923-a3ca-45b0-a900-bc15ee6473d6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "camaro",
+                  "type": "text",
+                  "uuid": "536f91fd-8cb8-420d-af29-71d968fc512b"
+                },
+                {
+                  "key": "price",
+                  "value": "8596",
+                  "type": "text",
+                  "uuid": "e1be99de-b802-40d2-bab5-5b8a1ea78b05"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "6920afa3-39db-4b47-b458-43270cb6b2f4",
+                  "type": "text",
+                  "uuid": "86518a94-e49c-4ccd-a3d2-8a894ffc8ae2"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "5ea9a427-b723-413c-8cc0-05a2424f7080",
+                  "src": "/C:/Users/X/Pictures/Screenshots/Screenshot (210).png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/d1beb93b-779b-476b-80fa-0ea0c95c4e87",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "d1beb93b-779b-476b-80fa-0ea0c95c4e87"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/products/2fada76b-ab27-4044-bb34-5a806f702abd",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "2fada76b-ab27-4044-bb34-5a806f702abd"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "product-bulk-upload",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "72071dc6-55d0-488d-be3d-dd78f773a9a7",
+                  "src": "/D:/PC/Downloads/products.csv"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/products/bulk",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "bulk"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "export-product",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{json_web_token_0hhf}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/products/export?format=csv",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "products",
+                "export"
+              ],
+              "query": [
+                {
+                  "key": "format",
+                  "value": "csv"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "bearer_token_0xpj",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0fbb",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0hhf",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0blm",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0hhf",
+      "secret": true
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<h2>Edit Product</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div>
+
+        <label>Name</label>
+
+        <br>
+
+        <input type="text" formControlName="name">
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Price</label>
+
+        <br>
+
+        <input type="number" formControlName="price">
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Category</label>
+
+        <br>
+
+        <select formControlName="categoryId">
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option *ngFor="let c of categories" [value]="c.id">
+
+                {{ c.name }}
+
+            </option>
+
+        </select>
+
+    </div>
+
+    <br>
+
+    <div *ngIf="currentImage">
+
+        <label>Current Image</label>
+
+        <br>
+
+        <img [src]="currentImage" width="150" alt="Current Product">
+
+    </div>
+
+    <br>
+
+    <div>
+
+        <label>Upload New Image</label>
+
+        <br>
+
+        <input type="file" (change)="onFileChange($event)">
+
+    </div>
+
+    <br>
+
+    <button type="submit">
+
+        Update Product
+
+    </button>
+
+</form>

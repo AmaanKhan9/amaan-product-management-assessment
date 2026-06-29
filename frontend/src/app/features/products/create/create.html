@@ -1,0 +1,63 @@
+<h2>Create Product</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+    <p>
+
+        <label>Name</label>
+
+        <br>
+
+        <input type="text" formControlName="name">
+
+    </p>
+
+    <p>
+
+        <label>Price</label>
+
+        <br>
+
+        <input type="number" formControlName="price">
+
+    </p>
+
+    <p>
+
+        <label>Category</label>
+
+        <br>
+
+        <select formControlName="categoryId">
+
+            <option value="">
+                Select Category
+            </option>
+
+            <option *ngFor="let c of categories" [value]="c.id">
+
+                {{ c.name }}
+
+            </option>
+
+        </select>
+
+    </p>
+
+    <p>
+
+        <label>Image</label>
+
+        <br>
+
+        <input type="file" (change)="onFileChange($event)">
+
+    </p>
+
+    <button type="submit">
+
+        Create Product
+
+    </button>
+
+</form>

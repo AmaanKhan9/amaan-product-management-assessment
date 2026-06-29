@@ -1,0 +1,14 @@
+<div style="max-width:300px;margin:auto;">
+    <h2>Register</h2>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <input placeholder="Name" formControlName="name" style="width:100%;margin-bottom:10px;" />
+
+        <input placeholder="Email" formControlName="email" style="width:100%;margin-bottom:10px;" />
+
+        <input type="password" placeholder="Password" formControlName="password"
+            style="width:100%;margin-bottom:10px;" />
+
+        <button type="submit" style="width:100%;">Register</button>
+    </form>
+</div>
