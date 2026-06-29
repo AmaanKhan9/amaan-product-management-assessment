@@ -4,7 +4,7 @@ A full-stack application for managing products and categories with authenticatio
 
 - Backend: Node.js + Express + Prisma
 - Frontend: Angular (Standalone Components)
-- Database: PostgreSQL (or configured DB)
+- Database: PostgreSQL
 - Auth: JWT Authentication
 
 ---
