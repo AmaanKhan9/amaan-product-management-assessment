@@ -72,12 +72,12 @@ http://localhost:3000/api
 
 
 📌 Tech Highlights
-Angular Standalone Architecture
-Reactive Forms
-Lazy Loaded Routes
-JWT Authentication Flow
-File Upload (Multer)
-CSV Export using server-side streaming
+Angular Standalone Architecture,
+Reactive Forms,
+Lazy Loaded Routes,
+JWT Authentication Flow,
+File Upload (Multer),
+CSV Export using server-side streaming,
 Prisma ORM for DB management
 
 
