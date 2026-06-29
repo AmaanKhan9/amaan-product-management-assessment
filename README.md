@@ -14,7 +14,9 @@ A full-stack application for managing products and categories with authenticatio
 ## 🔐 Authentication
 - User Register
 - User Login
-- JWT Protected Routes
+- JWT Protected Routes (Auth Guard + Interceptor)
+
+---
 
 ## 📂 Categories
 - Create Category
@@ -22,13 +24,18 @@ A full-stack application for managing products and categories with authenticatio
 - Update Category
 - Delete Category
 
+---
+
 ## 📦 Products
 - Create Product (with image upload)
-- List Products (pagination, search, sort)
+- List Products
+  - Pagination (server-side)
+  - Search (product + category)
+  - Sorting (price asc/desc)
 - Update Product
 - Delete Product
 - Bulk Upload CSV
-- Export Products CSV
+- Export Products (CSV download)
 
 ---
 
@@ -43,27 +50,36 @@ frontend/
 
 # 🚀 Setup Instructions
 
-## Backend and Frontend
-```bash
+## Backend Setup
 cd backend
 npm install
 npm run dev
 
+## Frontend Setup
 cd frontend
 npm install
 ng serve
 
-
-Environment Variables
-Backend .env required:
+🔐 Environment Variables (Backend)
+Modify .env file in backend:
 DATABASE_URL=your_db_url
 JWT_SECRET=your_secret
 PORT=3000
 
 
-API Base URL
+🌐 API Base URL
 http://localhost:3000/api
 
 
-Author
+📌 Tech Highlights
+Angular Standalone Architecture
+Reactive Forms
+Lazy Loaded Routes
+JWT Authentication Flow
+File Upload (Multer)
+CSV Export using server-side streaming
+Prisma ORM for DB management
+
+
+👨‍💻 Author
 Amaan Khan
